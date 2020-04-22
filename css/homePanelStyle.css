@@ -1,0 +1,450 @@
+*{box-sizing: border-box;}
+body{
+    margin: 0;
+    background-color: #232323;
+    background-image: url(../images/bdPattern.png);
+    background-size: cover;
+    animation-name: bodyFadeIn;
+    animation-duration: 1s;
+}
+@keyframes bodyFadeIn{
+    from{background-color: #f2f2f2;}
+    to{background-color: #232323;}
+
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+             /* HTML STYLING STARTS */
+
+            /* THE HEAD BAR STYLINGS START */
+#headBar{
+    background-color: #232323;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.logoHolder{
+    float: left;
+}
+.logoHolder img:nth-child(1){
+    width: 44px;
+    display: inline-block;
+    padding: 0 0 5px 10px;
+    margin:0 5px 0 10px
+}
+.logoHolder img:nth-child(2){
+    width: 200px;
+    display: inline-block;
+    padding: 3px 0 0px;
+}
+.sysBtnHolder{
+    float: right;
+    margin-right: -50px;
+    transition: .5s;
+    opacity: 0;
+}
+.closeBtnHolder,.hideBtnHolder{
+    float: right;
+    margin-bottom: -20px;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.closeBtnHolder{
+    background-color: rgb(255, 0, 0);
+    text-align: center;
+}
+.closeBtnHolder:hover{
+    background-color: #ff5959
+}
+.hideBtnHolder{
+    background-color: rgba(255,255,255,.1);
+    width: 55px;
+    text-align: center;
+}
+.hideBtnHolder:hover{
+    background-color: rgba(255,255,255,.2);
+}
+.closeBtnHolder i{
+    font-size: 50px;
+    font-weight: 900;
+}
+.hideBtnHolder i{
+    font-size: 50px;
+    font-weight: 900;
+    margin-top: 3px;
+}
+            /* THE HEAD BAR STYLINGS END*/
+
+
+            /* HOME PANEL BODY STYLINGS START */
+#HPLogoFade{
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#HPLogoFade img{
+    width: 400px;
+    animation-name: logoFade;
+    animation-duration: .5s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    z-index: -1;
+}
+@keyframes logoFade{
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+#HPBody{
+    height: calc(100vh - 50px);
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation-name: bodyFade;
+    animation-duration: .5s;
+    animation-delay: 1.5s;
+    animation-fill-mode: both;
+    justify-content: space-between;
+}
+@keyframes bodyFade{
+    from{opacity: 0;display: none}
+    to{opacity: 1;display: block}
+}
+.HPLeftMidHolder{
+    display: flex;
+}
+.HPHolderLeft{
+    width: 560px;
+    height: 419px;
+}
+.HPMainThumb{
+    overflow: hidden;
+    padding: 10px 0;
+    width: 550px;
+}
+.HPDPHolder{
+    height: 160px;
+    width: 160px;
+    float: left;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+#HPDP{
+    height: 100%;
+}
+.HPDPOver{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    cursor: pointer;
+    transform: translateY(-10px);
+    transition: .3s;
+    opacity: 0;
+}
+.HPDPHolder:hover .HPDPOver{
+    transform: translate(0);
+    opacity: 1;
+}
+.HPDPOver i{
+    background-color: transparent;
+    font-size: 60px;
+    padding: 0;
+    width: auto;
+    color: rgba(255,255,255, 0.7);
+}
+.HPDPOver i:hover{
+    color: rgba(255,255,255, 1);
+}
+.nameId{
+    float: left;
+    height: 160px;
+    width:390px;
+    display: flex;
+    flex-direction: column;
+}
+#uname{
+    text-align: center;
+    color:#fff;
+    font-family: raleway,roboto,sans-serif;
+    font-size: 24px;
+    margin: 0;
+    background-color: #161616;
+    padding: 12px;
+    font-weight: 400;
+    position: relative;
+}
+#activityBall{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 9px;
+    font-size: 14px;
+    color: #00ff21;
+}
+#editUname{
+    position: absolute;
+    right: 50px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid;
+    padding: 1px;
+    opacity: 0;
+    transition: .2s;
+    cursor: pointer;
+}
+#uname:hover #editUname{
+    opacity: .7;
+}
+#editUname:hover{
+    opacity: 1 !important;
+}
+#headInfo{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    background-image: linear-gradient(45deg,#c1f6ff,#c1d7ff);
+    opacity: .9;
+}
+#headInfo li{
+    float: left;
+    height: 107px;
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: roboto;
+    flex-direction: column;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+}
+#headInfo li:hover{
+    background-color: rgba(255,255,255,0.5);
+}
+#headInfo li:nth-child(1),#headInfo li:nth-child(2){
+    
+}
+#headInfo li p{
+    margin: 0;
+}
+#controlPanel{
+    width: 550px
+}
+#controlPanel ul{
+    padding: 0;
+    list-style: none;
+    margin:0;
+    height: 240px;
+}
+#controlPanel li{
+    padding: 20px 72px;
+    font-family: roboto;
+    background-color: rgba(255,255,255,.8);
+    cursor: pointer;
+    
+}
+#controlPanel li:hover{
+    background-color: rgba(255,255,255,.9);
+}
+#controlPanel li:active{
+    box-shadow: inset 0 0 5px rgba(0,0,0,.2)
+}
+#controlPanel li:nth-child(1),#controlPanel li:nth-child(2),#controlPanel li:nth-child(3){
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+#controlPanel li i{
+    font-size: 30px;
+    position: absolute;
+    margin-left: -50px;
+    margin-top: -6px
+}
+.HPHolderMid{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    height: 409px;
+}
+.HPHolderMid button{
+    width: 150px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    font-family: raleway;
+    font-size: 20px;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .2s;
+}
+#discussBtn{
+    background-color: #ff7700;
+}
+#UpPhotoBtn{
+    background-color: #0094ff;
+}
+#UpVidBtn{
+    background-color: #ff00fa;
+}
+.HPHolderMid button i{
+    font-size: 40px;
+    transition: .2s;
+}
+.HPHolderMid button:hover i{
+    font-size: 60px;
+    transform: translateY(14px);
+}
+.HPHolderMid button:hover span{
+    opacity: 0;
+}
+.HPHolderRight{
+    margin-left: 10px
+}
+.notiBox{
+    width: 350px;
+    margin-top: 10px;
+    position: relative;
+    height: calc(100vh - 120px);
+    margin-right: 200px;
+}
+.notiBox h1{
+    margin: 0;
+    color: #fff;
+    background-color: #161616;
+    padding: 10px;
+    font-family: roboto;
+    font-weight: 400;
+    text-align: center;
+}
+.notiHolder{
+    width: 100%;
+    position: relative;
+    border-top: none;
+    height: calc(100vh - 170px);
+    background-color: rgba(255,255,255,.8);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.notiHolder::-webkit-scrollbar{
+    background-color: rgba(0,0,0,.3);
+    width: 10px;
+}
+.notiHolder::-webkit-scrollbar-thumb{
+    background-color: rgba(0,0,0,.5);
+}
+.noti{
+    display: flex;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+.noti:hover{
+    box-shadow: inset 0 0 10px rgba(178, 178, 178,0.2)
+}
+.notiSeen{
+    background-color: rgba(0,0,0,0);
+}
+.notiNotSeen{
+    background-color: rgba(0,0,0,.85);
+    color: #fff;
+}
+.notiNotSeen::after{
+    content: "New";
+    font-family: roboto;
+    font-size: 10px;
+    transform: rotate(-90deg);
+    position: absolute;
+    margin-top: 16px;
+    right: 0;
+    background-color: #02a8f3;
+    padding:2px 15px;
+    margin-right: -17px;
+}
+.noti img{
+    width: 50px;
+}
+.noti i{
+    position: absolute;
+    margin-left: -40px;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d92ff;
+    border-bottom:1px solid rgba(255,255,255,.2);
+    transition: .3s;
+}
+@keyframes anim{
+    from{width: 30px}
+    to{width: 100%;}
+}
+.noti:active i{
+    animation-name: anim;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+.noti p{
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding:0 0 0 40px;
+    font-family: roboto;
+    font-size: 12px;
+    position: relative;
+}
+.notiText{
+    margin: 0;
+    font-family: roboto;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px rgba(255,255,255,.3);
+    width: calc(100% - 34px);
+    padding: 0 5px;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+
+            /* HOME PANEL BODY STYLINGS END */
+
+            /* THE LOAD BAR STYLINGS START*/
+
+#loadBarHolder{
+    height: 10px;
+    position:fixed;
+    background-color: #232323;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+#loadBar{
+    height: 10px;
+    background-color: rgba(255,255,255,.6);
+    width: 200px;
+}
+
+            /* THE LOAD BAR STYLINGS END */
